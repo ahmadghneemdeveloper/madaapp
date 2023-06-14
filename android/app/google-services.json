@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "489809362510",
+    "project_id": "mada-512c6",
+    "storage_bucket": "mada-512c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489809362510:android:5f48659f9e23315df74d1f",
+        "android_client_info": {
+          "package_name": "com.mada.madaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489809362510-fjlm47701o7dk0uc1ndupfkb40malsgg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mada.madaapp",
+            "certificate_hash": "b199af242898a3c25849a1892b4c423a7a292f81"
+          }
+        },
+        {
+          "client_id": "489809362510-89p60tl1m870oscck6v0634ep2lnd57b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwQwSSHI9PaLYPbPOd9ujlFv7ijoCZGnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489809362510-89p60tl1m870oscck6v0634ep2lnd57b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
