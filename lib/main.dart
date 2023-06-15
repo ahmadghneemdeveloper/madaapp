@@ -1,27 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:madaapp/config/navigation/navigation_services.dart';
-import 'package:madaapp/config/navigation/route_generator.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:madaapp/binding/intialbindings.dart';
 import 'package:madaapp/config/themes/theme_manager.dart';
+import 'package:madaapp/core/services/getx_services/service.dart';
 import 'package:madaapp/core/utils/constants.dart';
-import 'package:madaapp/providers.dart';
-import 'package:provider/provider.dart';
-
+import 'package:madaapp/routes.dart';
 import 'config/navigation/routes.dart';
-import 'injections.dart' as di;
 
 void main() async {
-  Provider.debugCheckInvalidValueType = null;
+
   WidgetsFlutterBinding.ensureInitialized();
-
   await Firebase.initializeApp();
-  await di.init();
-
-  runApp(
-    const AppProviders(
-      child: MyApp(),
-    ),
-  );
+  WidgetsFlutterBinding.ensureInitialized();
+  await initialServices();
+  MyServices();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -30,13 +24,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: Constants.appName,
-      theme: getApplicationTheme(),
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      locale: const Locale(
+        'en',
+      ),
+      title: Constants.appName,
+      initialBinding: InitialBindings(),
       initialRoute: Routes.splashScreen,
-      navigatorKey: NavigationService.navigationKey,
-      onGenerateRoute: RouteGenerator.onGenerateRoute,
+      getPages: routes,
+      theme: getApplicationTheme(),
+
     );
   }
 }

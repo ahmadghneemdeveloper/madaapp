@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:intl_phone_field/phone_number.dart';
 import 'package:madaapp/core/services/responsive/num_extensions.dart';
 
-class InputField extends StatefulWidget {
-   InputField({Key? key}) : super(key: key);
+class InputField extends StatelessWidget {
+  final TextEditingController? controller;
+  final void Function(PhoneNumber)? onChanged;
+   InputField({Key? key,required this.controller, this.onChanged,}) : super(key: key);
 
-
-  @override
-  State<InputField> createState() => _InputFieldState();
-}
-
-class _InputFieldState extends State<InputField> {
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +21,10 @@ class _InputFieldState extends State<InputField> {
       ),
       child: IntlPhoneField(
         keyboardType:  TextInputType.phone ,
-        //controller: controller.phoneController,
+        controller: controller,
         flagsButtonPadding: EdgeInsets.symmetric(horizontal: 5.w),
         decoration: InputDecoration(
+
           border: InputBorder.none,
           hintText: "Phone Number",
           hintStyle: TextStyle(
@@ -51,12 +49,10 @@ class _InputFieldState extends State<InputField> {
         ),
         textInputAction: TextInputAction.next,
         initialCountryCode: 'YE',
-        onChanged: (value) {
-
-
-        },
+        onChanged:onChanged,
         style: TextStyle(color: Colors.black.withOpacity(.8)),
       ),
     );
   }
 }
+

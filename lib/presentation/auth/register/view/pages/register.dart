@@ -109,9 +109,7 @@ class _RegisterPageState extends State<RegisterPage>
                         ),
                         inputField(
                             Icons.person_outline, 'UserName', false, false),
-                        InputField(
-
-                        ),
+                        // InputField(),
                         inputField(
                             Icons.lock_outline, 'Password...', true, false),
                         Row(

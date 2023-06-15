@@ -18,16 +18,20 @@ dependencies:
   # DI & State management
   get_it: ^7.2.0
   provider: ^6.0.5
+  get: ^4.6.5
   #log
   logger: ^1.1.0
   logging: ^1.0.2
   intl_phone_field: ^3.1.0
   # Network
+  http: ^0.13.5
+  dartz: ^0.10.1
   dio: ^4.0.6
   pretty_dio_logger: ^1.2.0-beta-1
   connectivity_plus: ^3.0.2
   firebase_core: ^2.13.1
   firebase_auth: ^4.6.2
+  get_storage: ^2.1.1
   country_pickers:
 
   # Local
